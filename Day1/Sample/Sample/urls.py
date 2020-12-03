@@ -23,4 +23,6 @@ urlpatterns = [
     path('about/',views.about),
     path('msg/<str:name>/',views.mesg),
     path('data/<str:name>/<int:num>/',views.data),
+    path('table/<int:n>/',views.table),
+    path('details/<str:name>/<int:n>/',views.details),
 ]

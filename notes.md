@@ -40,6 +40,8 @@
 - First need to enter to path where we have manage.py file
 - then run manage.py file
 
+## Day 2
+
 ### UserApp Creation
 
 - manage.py startapp Appname
@@ -80,4 +82,25 @@
     - from userapp import views
   - url ==> view ==> HttpResponse
 - Dynamic URL
-  - pass a varaible in the url path dynamically
+  - pass a varaible in the url path dynamically and return a HttpResponse
+
+## Day 3
+
+#### Dynamic url
+
+- url => 2 parameters(name,n) => views => Template(html)
+- Configure templates
+  - create templates folder[only .html files]
+    - r = {'key':'value'}
+    - render(request(self/default parameter),'path of .html[templaes]',r)
+    - render(request(self/default parameter),'path of .html[templaes]',data in dict format{})
+  - Django Template Language(DTL)
+    - url -> views -> .py -> HTML
+    - ajax/js
+      - During registration -> Json{dict} -> ServerSide -> Database
+    - Accessing variable
+      - {{}}
+  - static
+    - css
+    - images
+    - videos/audio

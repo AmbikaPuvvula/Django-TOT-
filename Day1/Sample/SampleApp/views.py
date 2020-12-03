@@ -12,3 +12,14 @@ def mesg(m,name):
 
 def data(n,name,num):
     return HttpResponse("<h2>Hi.. {} your number is {}</h2>".format(name,num))
+
+def table(h,n):
+    k = ""
+    for i in range(1,11):
+        k += " {} X {:02} = {:02}".format(n,i,n*i)+"<br>"
+    #print(k)
+    return HttpResponse(k)
+    
+def details(request,name,n):
+    #print(name,n)
+    return render(request,'SApp/details.html',{'na':name,'nu':n})
