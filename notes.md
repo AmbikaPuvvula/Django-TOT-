@@ -104,3 +104,31 @@
     - css
     - images
     - videos/audio
+
+## Day 4
+
+- templates --> tags --> styling
+- url ==> views ==> html
+- form
+- CSS(Cascading Style Sheets)
+
+  - Inline(used styles in inside tags)
+  - Internal(used in style tag i.e in head in html)
+    - syntax
+      <style>tagname{property:value;}</style>
+    - selectors --> tagname,class,id
+  - External(all style properties and values stored in other .css file)
+    - create a static folder in userapp and then create a css folder in this css folder create a .css file
+      - userapp --> static --> css --> styles.css
+  - settings.py:
+
+    - for CSS
+      - static = '/static/'
+      - {% load static %}
+      - <link rel="stylesheet" type="text/css" href="{% static 'css/filename' %}">
+    - for JS
+      - Inside script tag i.e <script></script>
+
+  - Tasks
+    - create login page using Internal / Inline
+    - create registration page using External styling

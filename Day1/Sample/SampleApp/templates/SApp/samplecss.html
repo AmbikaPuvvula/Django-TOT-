@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sample Css Example</title>
+        <style>
+            p{
+                background-color: pink;
+                color: green;
+                padding: 20px;
+                margin-right: 200px;
+                margin-left: 150px;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/sample.css' %}">
+    </head>
+    <body>
+        <h2>Sample page for css</h2>
+        <h3>Inline</h3>
+        <p style="background-color:skyblue;color:red;padding: 10px;margin-right: 200px;margin-left: 200px;font-size: large;">Sample Example for Inline</p>
+        <p>Demo</p>
+        <h3>Internal</h3>
+        <p>Demo for Internal </p>
+        <h3>External</h3>
+        <h5>Sample for external</h5>
+    </body>
+</html>

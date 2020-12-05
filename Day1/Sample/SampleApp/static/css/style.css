@@ -1,0 +1,33 @@
+h2 {
+  background-color: skyblue;
+  margin-left: 100px;
+  margin-right: 120px;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+}
+.container {
+  padding: 20px;
+}
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="email"],
+input[type="number"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 5px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}

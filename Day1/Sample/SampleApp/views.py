@@ -23,3 +23,12 @@ def table(h,n):
 def details(request,name,n):
     #print(name,n)
     return render(request,'SApp/details.html',{'na':name,'nu':n})
+
+def samplecss(request):
+    return render(request,'SApp/samplecss.html')
+
+def login(request):
+    return render(request,'SApp/login.html')
+
+def register(request):
+    return render(request,'SApp/register.html')

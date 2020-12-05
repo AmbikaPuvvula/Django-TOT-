@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <h2>Register Form</h2>
+        <form action="" method=""> 
+            <div class="container">
+                <label>First Name</label>
+                <input type="text" name="fname" required> 
+                <label>Last Name</label>
+                <input type="text" name="lname" required>
+                <label>Email</label>
+                <input type="email" name="email" required>
+                <label>Password</label>
+                <input type="password" name="pswd" required>
+                <label>Re-enter Password</label>
+                <input type="password" name="rpswd" required>
+                <label>Contact Number</label>
+                <input type="number" name="num" required>
+                <label>Date-of-Birth</label>
+                <input type="date" name="dob" required>
+                <button type="submit">Register</button>
+            </div>
+            
+        </form>
+    </body>
+</html>
