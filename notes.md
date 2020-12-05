@@ -132,3 +132,5 @@
   - Tasks
     - create login page using Internal / Inline
     - create registration page using External styling
+
+## Day 5
