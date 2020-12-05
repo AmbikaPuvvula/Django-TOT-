@@ -2,6 +2,39 @@
 <html>
     <head>
         <title>Login</title>
+        <style>
+            .container{
+                padding: 50px;margin: auto;width: 380px;border-radius: 15px;background: lightblue;
+            }
+            input[type="text"]{
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+            }
+            input[type="password"]{
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+            }
+            button{
+                background-color: #4CAF50;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+            }
+            a{
+                float: right;
+            }
+        </style>
     </head>
     <body>
         <form action="" method="">
@@ -13,32 +46,16 @@
             border-radius: 25px;
             text-align: center;
             font-size: 30px;">Login</h2>
-            <div class="container" style="padding: 50px;margin: auto;width: 380px;border-radius: 15px;background: lightblue;">
+            <div class="container">
                 <label style="padding: 100px 50px"><b>Username: </b></label>
-                <input type="text" name="uname" style="width: 100%;
-                padding: 12px 20px;
-                margin: 8px 0;
-                display: inline-block;
-                border: 1px solid #ccc;
-                box-sizing: border-box;" required>
+                <input type="text" name="uname" required>
                 <label style=" padding: 100px 50px"><b>Password: </b></label>
-                <input type="password" name="pswd" style="width: 100%;
-                padding: 12px 20px;
-                margin: 8px 0;
-                display: inline-block;
-                border: 1px solid #ccc;
-                box-sizing: border-box;" required>
-                <button type="submit" style="background-color: #4CAF50;
-                color: white;
-                padding: 14px 20px;
-                margin: 8px 0;
-                border: none;
-                cursor: pointer;
-                width: 100%;">Login</button>
+                <input type="password" name="pswd" required>
+                <button type="submit" >Login</button>
                 <input type="checkbox">
                 <span>Remember me</span>
                 <br>
-                <a href="" style="float: right;">Forget Password ?</a>
+                <a href="" >Forget Password ?</a>
             </div>
         </form>
         
