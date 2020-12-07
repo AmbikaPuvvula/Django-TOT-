@@ -28,4 +28,6 @@ urlpatterns = [
     path('dcss/',views.samplecss),
     path('login/',views.login),
     path('register/',views.register),
+    path('djs/',views.samplejs),
+    path('jstask/',views.jstask),
 ]

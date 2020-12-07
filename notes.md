@@ -134,3 +134,13 @@
     - create registration page using External styling
 
 ## Day 5
+
+### JavaSript
+
+- for JS
+  - Inside script tag i.e <script></script>
+  - try to practice js in console
+  - Script tag should be in head section in script tag or in body section in script tag
+- Task
+  - create form with two input fields and a button(validate) by clicking validate print the values of the arithmatic operations will be display at the bottom of the form.
+    - use alert or any tag to display the output

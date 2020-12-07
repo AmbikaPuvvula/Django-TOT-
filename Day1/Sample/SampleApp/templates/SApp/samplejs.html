@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sample JS</title>
+        <!-- <script type="text/javascript">
+        alert("Hii....")
+        </script> -->
+        <style>
+            h2{
+            background-color: rgba(213, 233, 122, 0.897);
+            margin-left: 100px;
+            margin-right: 120px;
+            padding: 10px;
+            border-radius: 25px;
+            text-align: center;
+            font-size: 30px;
+            }
+            .container{
+                padding: 50px;margin: auto;width: 380px;border-radius: 15px;background: lightblue;
+            }
+            input[type="text"]{
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+            }
+            input[type="number"]{
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+            }
+            input[type="email"]{
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+            }
+            input[type="submit"]{
+                background-color: #4CAF50;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 12px;
+                cursor: pointer;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Java Script</h2>
+        <form>
+            <div class="container">
+                <label ><b>Name: </b></label>
+                <input type="text" name="name" id="na" required>
+                <label ><b>Contact Number: </b></label>
+                <input type="number" name="num" id="nu" required>
+                <label ><b>Email: </b></label>
+                <input type="email" name="email" id="em"required>
+                <input type="submit" name = "btn" value="submit" onclick="Ad()">
+                <!-- <button type="submit" onclick="">Submit</button> -->
+            </div>
+        </form>
+        <script type="text/javascript" src="{% static 'js/sample.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>Arithematic Calculations</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jstask.css' %}">
+<body>
+    <h2>Calculations</h2>
+    <form>
+        <div class="container">
+            <label>1st Number :</label>
+            <input type="number" id="fn"  required><br>
+            <label>2nd Number:</label>
+            <input type="number" id="sn" required><br>
+            <input type="submit" name = "btn" value="validate" onclick="val()">
+        </div>
+    </form>
+
+</body>
+<script type="text/javascript" src="{% static 'js/jstask.js' %}"></script>
+</html>

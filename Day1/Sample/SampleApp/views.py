@@ -32,3 +32,9 @@ def login(request):
 
 def register(request):
     return render(request,'SApp/register.html')
+
+def samplejs(request):
+    return render(request,'SApp/samplejs.html')
+
+def jstask(request):
+    return render(request,'SApp/jstask.html')
