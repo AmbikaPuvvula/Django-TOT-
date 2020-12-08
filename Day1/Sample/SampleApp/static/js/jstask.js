@@ -5,6 +5,7 @@ function val(){
         sub = parseInt(a) - parseInt(b)
         mul = parseInt(a) * parseInt(b)
         div = parseInt(a) / parseInt(b)
-        alert('Addition is '+sum + '\n' + 'Substraction is '+sub +'\n'+'Multiplication is '+ mul +'\n'+ 'Division is '+ div)
+        document.getElementById("result").innerText='Addition is '+sum + '\n' + 'Substraction is '+sub +'\n'+'Multiplication is '+ mul +'\n'+ 'Division is '+ div
+        //alert('Addition is '+sum + '\n' + 'Substraction is '+sub +'\n'+'Multiplication is '+ mul +'\n'+ 'Division is '+ div)
 }
 

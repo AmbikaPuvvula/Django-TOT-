@@ -16,18 +16,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from SampleApp import views
+from SampleApp_2 import views as v
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home),
-    path('about/',views.about),
-    path('msg/<str:name>/',views.mesg),
-    path('data/<str:name>/<int:num>/',views.data),
-    path('table/<int:n>/',views.table),
-    path('details/<str:name>/<int:n>/',views.details),
-    path('dcss/',views.samplecss),
-    path('login/',views.login),
-    path('register/',views.register),
-    path('djs/',views.samplejs),
-    path('jstask/',views.jstask),
+    path('home/', views.home),
+    path('about/', views.about),
+    path('msg/<str:name>/', views.mesg),
+    path('data/<str:name>/<int:num>/', views.data),
+    path('table/<int:n>/', views.table),
+    path('details/<str:name>/<int:n>/', views.details),
+    path('dcss/', views.samplecss),
+    path('login/', views.login),
+    path('register/', views.register),
+    path('djs/', views.samplejs),
+    path('jstask/', views.jstask),
+    path('', v.home),
+    path('bstp/', v.bootstrap),
 ]

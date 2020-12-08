@@ -144,3 +144,13 @@
 - Task
   - create form with two input fields and a button(validate) by clicking validate print the values of the arithmatic operations will be display at the bottom of the form.
     - use alert or any tag to display the output
+
+## Day 6
+
+### Project Requirements
+
+- CRUD
+- Login,logout
+- Message
+- Mail
+- Relationships
