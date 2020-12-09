@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bootstrap</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <!-- <h2 class="mx-5 my-4 bg-success text-white p-2 border rounded text-center">Bootstrap Demo</h2>
+        <div class="container">
+            <div class="row">
+                <div class=" jumbotron col mr-2"> 
+                    <h3>Col-1</h3>
+                </div>
+                <div class=" jumbotron col ml-2"> 
+                    <h3>Col-2</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class=" jumbotron col mr-2"> 
+                    <h3>Col-1</h3>
+                </div>
+                <div class=" jumbotron col mx-2"> 
+                    <h3>Col-2</h3>
+                </div>
+                <div class=" jumbotron col ml-2"> 
+                    <h3>Col-3</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class=" jumbotron col-md-4 mr-2"> 
+                    <h3>Col-1</h3>
+                </div>
+                <div class=" jumbotron col ml-2"> 
+                    <h3>Col-2</h3>
+                </div>
+            </div>
+        </div> -->
+        <div class="container">
+            <div class="row">
+                <div class="jumbotron col mr-2 mt-3 shadow-lg">
+                    <h3 class="bg-primary mx-2 p-2 text-center text-dark border rounded">Login</h3>
+                    <form class="col-md-6 mx-auto">
+                        <input type="text" class="form-control my-2" placeholder="Enter your name">
+                        <input type="password" class="form-control my-2" placeholder="Enter your password">
+                        <input type="Submit" name="login" class="bg-success text-white my-2">
+                    </form>
+                </div>
+                <div class="card col mr-2 mt-3 shadow-lg">
+                    <h3 class="bg-dark mx-2 mt-3 p-2 text-center text-light border rounded shadow-lg">Register</h3>
+                    <form class="col-md-6 mx-auto">
+                        <label><b>Email:</b></label>
+                        <input type="email" class="form-control my-2" placeholder="Enter your email">
+                        <label><b>Password:</b></label>
+                        <input type="password" class="form-control my-2"  placeholder="Enter your password">
+                        <label><b>Gender:</b></label><br>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label class="radio-inline">
+                                <input type="radio" id="male" name="gender" value="male"> Male</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="radio-inline">
+                                <input type="radio" id="male" name="gender" value="male"> Female</label>
+                            </div>  
+                        </div>
+                        <label><b>Date of Birth:</b></label>
+                        <input type="date" name="dob" value="dob" class="form-control bg-secondary text-white mb-3">
+                        <label><b>Select Month & Year:</b></label>
+                        <input type="month" name="mnth" value="mnth" class="form-control bg-primary text-white mb-3">
+                        <label><b>Time Select:</b></label><br>
+                        <input type="time" name="t" value="t" class="form-control bg-success text-white mb-3">
+                        <label><b>Languages Known:</b></label><br>
+                        <input type="checkbox" id="telugu" name="telugu" value="Telugu" >
+                        <label>Telugu</label><br>
+                        <input type="checkbox" id="hindi" name="hindi" value="Hindi">
+                        <label>Hindi</label><br>
+                        <input type="checkbox" id="english" name="english" value="English">
+                        <label>English</label><br>
+                        <label><b>Select Course</b></label>
+                        <select class="form-control bg-info mb-3">
+                            <option value="op1">Python</option>
+                            <option value="op2">DataScience</option>
+                            <option value="op3">Machine Learning</option>
+                            <option value="op4">React</option>
+                            <option value="op5">Django</option>
+                        </select>
+                        <label><b>Opt Group</b></label>
+                        <select class="form-control bg-warning mb-3">
+                            <optgroup label="Front End">
+                                <option>HTML</option>
+                                <option>CSS</option>
+                                <option>BOOTSTRAP</option>
+                            </optgroup>
+                            <optgroup label="Back End">
+                                <option>Python</option>
+                                <option>Java</option>
+                            </optgroup>
+                        </select>
+                        <label><b>Select with-in date range:</b></label>
+                        <input type="date" name="" min="2020-12-09" max="2020-12-31" class="form-control mb-2">
+                        <label><b>Select and Search:</b></label>
+                        <input list="courses" class="form-control bg-secondary text-white mb-3">
+                        <datalist id="courses">
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+                            <option value="Js">JS</option>
+                            <option value="Java">Java</option>
+                            <option value="python">Python</option>
+                            <option value="pg">Problem Solving</option>
+                        </datalist>
+                        <label><b>Select your favorite color:</b></label>
+                        <input type="color" id="favcolor" name="favcolor" class="form-control mb-2 bg-light p-15 border rounded">
+                        <label><b>Enter Url</b></label>
+                        <input type="url" name="url" class="form-control bg-secondary text-white mb-3">
+                        <label><b>Upload file:</b></label>
+                        <input type="file" id="myfile" name="myfile" class="form-control mb-3">
+                        <label><b>Comments:</b></label>
+                        <textarea class="form-control bg-dark text-white"></textarea>
+                        <button type="button" class=" btn btn-outline-success text-dark my-2">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

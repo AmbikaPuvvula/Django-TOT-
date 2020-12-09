@@ -33,4 +33,5 @@ urlpatterns = [
     path('jstask/', views.jstask),
     path('', v.home),
     path('bstp/', v.bootstrap),
+    path('bst/', v.bst),
 ]

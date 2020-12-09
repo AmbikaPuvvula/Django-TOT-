@@ -9,3 +9,7 @@ def home(request):
 
 def bootstrap(request):
     return render(request, 'SApp_2/bstp.html')
+
+
+def bst(request):
+    return render(request, 'SApp_2/bst.html')

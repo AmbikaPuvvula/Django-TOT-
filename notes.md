@@ -154,3 +154,42 @@
 - Message
 - Mail
 - Relationships
+
+## Day 7
+
+- Bootstrap
+  - Included css,js
+  - js --> DOM
+  - id --> exact
+  - class --> all
+  - class,id --> changes
+- css,jquery,js[order]
+- styling
+
+  - h4{
+    margin-left : 20px;
+    margin-right : 20px;
+    background-color : green;
+    }
+  - <h4 class="mx-20px bg-success>Demo</h4> [same as css styling but here all styles mention inside the class]
+  - mx -1 ==> 4px
+    padding ==> point ==> 1 - 5
+    x ==> left,right
+    y ==> top,bottom
+
+    pl - 2, pr - 5,pt - 5,pb - 3(l-left,r-right,t-top,b-bottom)
+    ml - 2, mr - 6,mt - 4,mb - 4(l-left,r-right,t-top,b-bottom)
+    p - 2(padding is Applicable to all sides)
+
+  - Grids
+    - columns ==> 12
+    - sm(Small)
+    - md(medium)
+    - lg(large)
+    - xs(xtra small)
+
+- shadow --(small,large,medium)
+- labels ==> id
+- input ==> for
+- Registration page
+  - cover all input fields
