@@ -45,7 +45,8 @@
 ### UserApp Creation
 
 - manage.py startapp Appname
-- Ex: python manage.py startapp SampleApp
+- create App --> `python manage.py startapp appname`
+- Ex: `python manage.py startapp SampleApp`
 - UserApp Files
   - init.py(similar to python file)
   - admin.py(tables created here will be view on admin page)
@@ -193,3 +194,92 @@
 - input ==> for
 - Registration page
   - cover all input fields
+
+## Day 8
+
+- url --> views --> html --> views --> html
+- For that we have to learn(DTL) i.e Django Template Language
+  - variable --> {{}}
+  - conditional statements(used at user and super user cases)
+    - if
+      {% if condition %}
+      statements
+      {% endif %}
+    - if - else
+      {% if condition %}
+      statements
+      {% else %}
+      statements
+      {% endif %}
+    - else-if
+      {% if condition %}
+      statements
+      {% elif condition %}
+      statements
+      {% else %}
+      statements
+      {% endif %}
+  - loops
+    - for
+      {% for iteratingvariable in iterator %}
+      statements
+      {{iterating variable name}}
+      {% end for %}
+  - url
+    - {% url 'urlname' %}
+    - {% extends 'urlname' %}
+    - {% includes 'urlname' %}
+  - static
+    - {% load static %}
+  - image
+    - <img src= "{% static 'images/logo.png' %}">
+- How to use bootstrap offline
+  - go to official site of https://getbootstrap.com/ and click on download it rediredects to compiled CSS and JS there click on download
+  - Extract the zip file and there we have two folders css and js
+    - In css -- copy the bootstrap.min.cs and paste that in the static folder in the app folder
+    - In Js -- copy the bootstrap.min.js and paste that in the static folder in the app folder
+- Forms
+
+  - methods --> GET,POST
+    - if method is get then the data passed in html will be shown in url[default]
+      - characters limit
+      - data will be get
+    - if method is post then the data will be secured
+      - No character limit
+      - sensitive info
+      - data will be saved
+  - submit form --> form {%csrf_token %} will be includeds
+
+- Task
+  - Login form --> username and password --> validate
+    - True -- Hii welcome username
+    - Else -- Invalid user
+  - Registration --> Details --> .html ==> viewed
+
+## Day 9
+
+- Django Model
+  - Model is class
+- ORM
+- Differnce between ORM and SQL
+- Create Django Model class table with fields
+  - class classname(models.Model):
+    - name = models.CharField(maxlength=30,null=True,blank=True,help_text="Enter name")
+    - age = models.IntegerField()
+    - resume = models.FileField(upload_to="files")
+    - image = models.ImageField(upload_to="images")
+    - dob = models.DateField()
+    - publish = models.DateTimeField(datetime.now())
+- Create a seperate app for crud applications
+  - now go to urls.py in project file and add include in django
+  - now import seperate urls with the help of include i.e
+    - `path('urlname/',include('Appname.urls'))`
+    - Now create seperate urls.py file in newApp
+- After creating Models
+  - first step is to make migrations(create a sql query from models)
+    - `python manage.py makemigrations`
+  - next is to migrate
+    - `python manage.py migrate`
+  - checking tables
+    - using db sqlite
+    - django administrator

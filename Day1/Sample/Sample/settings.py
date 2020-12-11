@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'SampleApp',
     'SampleApp_2',
+    'CrudApp',
 ]
 
 MIDDLEWARE = [
