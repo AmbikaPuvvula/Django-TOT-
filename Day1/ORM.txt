@@ -1,0 +1,105 @@
+In [1]: from CrudApp.models import Emp
+
+In [2]: firstval = Emp(empname='Ambika',empid='AO071801247',sal='10000',dept='python')
+
+## In [3]: firtstval.save()
+
+NameError Traceback (most recent call last)
+<ipython-input-3-eea631834df7> in <module>
+----> 1 firtstval.save()
+
+NameError: name 'firtstval' is not defined
+
+In [4]: firstval.save()
+In [5]: firstval = Emp(empname='Ambika',empid='AO071801247',sal='10000',dept='python')
+
+In [6]: firstval.save()
+
+In [7]: Emp.objects.create(empname='Pavani',empid='Ao071801233',sal='15000',dept='python')
+Out[7]: <Emp: Pavani Ao071801233>
+In [8]: Emp.objects.create(empname='Srinivas',empid='Ao071801553',sal='15000',dept='ML')
+Out[8]: <Emp: Srinivas Ao071801553>
+
+In [9]: Emp.objects.create(empname='Srividya',empid='Ao071801253',sal='17000',dept='python')
+Out[9]: <Emp: Srividya Ao071801253>
+In [10]: Emp.objects.create(empname='Archana',empid='Ao071801253',sal='17000',dept='python')
+Out[10]: <Emp: Archana Ao071801253>
+In [11]: Emp.objects.all()
+Out[11]: <QuerySet [<Emp: Ambika AO071801247>, <Emp: Ambika AO071801247>, <Emp: Pavani Ao071801233>, <Emp: Srinivas Ao071801553>, <Emp: Srividya Ao071801253>, <Emp: Archana Ao071801253>]>
+In [13]: Emp.objects.values()
+Out[13]: <QuerySet [{'id': 1, 'empname': 'Ambika', 'empid': 'AO071801247', 'sal': 10000, 'dept': 'python'}, {'id': 2, 'empname': 'Ambika', 'empid': 'AO071801247', 'sal': 10000, 'dept': 'python'}, {'id': 3, 'empname': 'Pavani', 'empid': 'Ao071801233', 'sal': 15000, 'dept': 'python'}, {'id': 4, 'empname': 'Srinivas', 'empid': 'Ao071801553', 'sal': 15000, 'dept': 'ML'}, {'id': 5, 'empname': 'Srividya', 'empid': 'Ao071801253', 'sal': 17000, 'dept': 'python'}, {'id': 6, 'empname': 'Archana', 'empid': 'Ao071801253', 'sal': 17000, 'dept': 'python'}]>
+In [14]: Emp.objects.values_list()
+Out[14]: <QuerySet [(1, 'Ambika', 'AO071801247', 10000, 'python'), (2, 'Ambika', 'AO071801247', 10000, 'python'), (3, 'Pavani', 'Ao071801233', 15000, 'python'), (4, 'Srinivas', 'Ao071801553', 15000, 'ML'), (5, 'Srividya', 'Ao071801253', 17000, 'python'), (6, 'Archana', 'Ao071801253', 17000, 'python')]>
+In [16]: Emp.objects.values('empname')
+Out[16]: <QuerySet [{'empname': 'Ambika'}, {'empname': 'Ambika'}, {'empname': 'Pavani'}, {'empname': 'Srinivas'}, {'empname': 'Srividya'}, {'empname': 'Archana'}]>
+In [17]: Emp.objects.get(id='1')
+Out[17]: <Emp: Ambika AO071801247>
+In [18]: data = Emp.objects.all()
+
+In [19]: for i in data:
+...: print(i)
+...:
+Ambika AO071801247
+Ambika AO071801247
+Pavani Ao071801233
+Srinivas Ao071801553
+Srividya Ao071801253
+Archana Ao071801253
+In [21]: for i in data:
+...: print(i.empid)
+...:
+...:
+AO071801247
+AO071801247
+Ao071801233
+Ao071801553
+Ao071801253
+Ao071801253
+
+## In [22]: Emp.objects.get(empname='Ambika')
+
+MultipleObjectsReturned Traceback (most recent call last)
+<ipython-input-22-90a7fd82ad8b> in <module>
+----> 1 Emp.objects.get(empname='Ambika')
+
+~\AppData\Local\Programs\Python\Python38-32\lib\site-packages\django\db\models\manager.py in manager_method(self, *args, \*\*kwargs)
+80 def create_method(name, method):
+81 def manager_method(self, *args, **kwargs):
+---> 82 return getattr(self.get_queryset(), name)(\*args, **kwargs)
+83 manager_method.**name** = method.**name**
+84 manager_method.**doc** = method.**doc**
+
+~\AppData\Local\Programs\Python\Python38-32\lib\site-packages\django\db\models\query.py in get(self, \*args, \*\*kwargs)
+417 self.model.\_meta.object_name
+418 )
+--> 419 raise self.model.MultipleObjectsReturned(
+420 'get() returned more than one %s -- it returned %s!' % (
+421 self.model.\_meta.object_name,
+
+MultipleObjectsReturned: get() returned more than one Emp -- it returned 2!
+
+In [23]: Emp.objects.filter(empname='Ambika')
+Out[23]: <QuerySet [<Emp: Ambika AO071801247>, <Emp: Ambika AO071801247>]>
+In [24]: Emp.objects.all()[:]
+Out[24]: <QuerySet [<Emp: Ambika AO071801247>, <Emp: Ambika AO071801247>, <Emp: Pavani Ao071801233>, <Emp: Srinivas Ao071801553>, <Emp: Srividya Ao071801253>, <Emp: Archana Ao071801253>]>
+
+In [25]: Emp.objects.first()
+Out[25]: <Emp: Ambika AO071801247>
+
+In [26]: Emp.objects.last()
+Out[26]: <Emp: Archana Ao071801253>
+
+In [28]: Emp.objects.order_by('empid')
+Out[28]: <QuerySet [<Emp: Ambika AO071801247>, <Emp: Ambika AO071801247>, <Emp: Pavani Ao071801233>, <Emp: Srividya Ao071801253>, <Emp: Archana Ao071801253>,
+<Emp: Srinivas Ao071801553>]>
+In [31]: Emp.objects.values('id').get(empname='Pavani')
+Out[31]: {'id': 3}
+In [35]: data = Emp.objects.get(empname='Pavani')
+
+In [36]: data.empname='Pavani Suvarna Durga'
+
+In [37]: data.save()
+In [39]: info = Emp.objects.get(empname='Srinivas')
+
+In [40]: info.delete()
+Out[40]: (1, {'CrudApp.Emp': 1})

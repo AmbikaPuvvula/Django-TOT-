@@ -276,10 +276,96 @@
     - `path('urlname/',include('Appname.urls'))`
     - Now create seperate urls.py file in newApp
 - After creating Models
-  - first step is to make migrations(create a sql query from models)
+  - first step is to make migrations(custom class to create migrations)
     - `python manage.py makemigrations`
   - next is to migrate
+  - Django provides 11 tables
+  - Others will be created by userapp
     - `python manage.py migrate`
   - checking tables
     - using db sqlite
     - django administrator
+
+## Day 9
+
+- Update some model fields and make migrations and migrate
+- Then open db file in dbsqlite and insert a record
+- Create Super user
+  - `python manage.py createsuperuser`
+- After creating superuser check the admin site
+  - there we will see super user add an user, how to convert that user to super user,inserting data in the admin
+- ORM(Object Relational Mapping) Queries
+- open shell using
+
+  - `python manage.py shell`
+  - To open that particular table
+
+    - `from Appname.models import classname`
+    - Insert
+      - Two ways to insert values
+        - using save
+          - temp(variable_name) = classname(fieldname=value,fieldname=value)
+          - temp.save()
+        - using create
+          - classname.objects.create(fieldname=value)
+    - Retrieve
+      - In sql
+        - `select * from tablename`
+      - In ORM
+        - classname.objects.all() --> Obtain values in query set
+        - classname.objects.values() --> In dict format
+        - classname.objects.values_list() --> In list format
+        - classname.objects.values('fieldname') --> for particular fields
+        - To get specific id use get()
+          - classname.objects.get(id='1')
+        - To get particular tables use for loop for all objects variable and print the particular field name
+        - difference b/w filter and get
+          - filter(display duplicate values)
+          - get(only get single value)
+        - slicing
+          - classname.objects.all()[:]
+          - classname.objects.first()
+          - classname.objects.last()
+          - classname.objects.order_by(fieldname)
+          - classname.objects.values('id').get(fieldname='value')
+    - Update
+      - update all() --particular record
+      - classname.objects.all().update(fieldname=value)
+      - To update particular record output
+        - using get method retrieve data and then update the values and save that
+          - variable_name = classname.objects.get(fieldname='value')
+          - variable_name.fieldname = 'new_value'
+          - variable_name.fieldname = 'new_value'
+          - variable_name.save()
+    - Delete
+      - Delete records from table
+      - To delete all records
+        - classname.objects.all().delete()
+      - To delete particular record
+        - retrieve that record using get() and then delete that record
+        - variable_name = classname.objects.get(fieldname='value')
+        - variable_name.delete()
+
+- Task
+  - empid,name,salary,department
+
+## Day 10
+
+- CRUD operations using HTML forms
+- Create
+- Read
+- Update
+- Delete
+- Task
+  - First Task
+    - One model class in models.py
+    - select options,
+    - form fields
+      - text,radio,checkbox,dropdown
+  - Second Task
+    - click on edit display the edit page with the current details
+    - click on delete display the dialog box to delete and cancel buttons
+
+## Day 11
+
+- edit and delete with gender,branch and languages

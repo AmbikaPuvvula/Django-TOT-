@@ -1,0 +1,55 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CRUD</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    </head>
+    <body>
+        <div class="container col-md-4 mt-3 card card-body bg-success">
+            <form action="#" method="POST">
+              {% csrf_token %}
+              <h1 class="text-center text-warning">UpdateForm</h1>
+          
+              <div class="form-group">
+                <label for="name">Name*</label>
+                <input type="text" name="name" class="form-control" id="roll" value="{{data.name}}" required>
+              </div>
+
+              <div class="form-group">
+                <label for="roll">RollNO*</label>
+                <input type="text" name="rollno" value="{{data.rollnum}}" class="form-control" id="roll" required>
+              </div>
+
+              <div class="form-group">
+                <label for="age">Age*</label>
+                <input type="integer" name="age" class="form-control" id="age" value="{{data.age}}"required>
+              </div>
+
+              <div class="form-group">
+                <label for="mob">Mobile*</label>
+                <input type="text" name="mobile" class="form-control" id="mobile" value="{{data.mobile}}" required>
+              </div>
+
+
+              <div class="form-group">
+                <label for="email">Email*</label>
+                <input type="email" name="email" class="form-control" id="email" value="{{data.email}}" required>
+              </div>
+          
+              <div class="form-group">
+                <label for="address">Address*</label>
+                <textarea name="address" rows="3" id="add" class="form-control mb-3">{{data.address}}</textarea>
+              </div>
+
+              <div class="text-center">
+                <input type="submit" value="Update" class="btn btn-outline-warning btn-lg mt-3">
+                <a href="{% url 'read' %}" class="btn btn-outline-primary btn-lg mt-3">Cancel</a>
+              </div>
+
+    </body>
+</html>
