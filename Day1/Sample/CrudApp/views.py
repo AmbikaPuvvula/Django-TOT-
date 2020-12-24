@@ -55,9 +55,9 @@ def createstu(request):
         lan = request.POST.getlist('lan')
         em = request.POST.get('email')
         br = request.POST.get('branch')
-        dob = request.POST.get('dob')
+        # dob = request.POST.get('dob')
         StudentDetails.objects.create(
-            stuname=stname, stunum=stnum, email=em, lang=lan, branch=br, DOB=dob, gender=gen)
+            stuname=stname, stunum=stnum, email=em, lang=lan, branch=br, gender=gen)
         return redirect('readstu')
     return render(request, 'CrudApp/cs.html')
 
@@ -77,7 +77,7 @@ def updatestu(request, id):
         data.lang = request.POST['lan']
         data.email = request.POST['email']
         data.branch = request.POST['branch']
-        data.DOB = request.POST['dob']
+        # data.DOB = request.POST['dob']
         data.save()
         return redirect('readstu')
     return render(request, 'CrudApp/u.html', {'data': data})

@@ -27,24 +27,24 @@
 
             <div class="form-group">
                 <label class="radio-inline">
-                    <input type="radio" name="gender" value="Female" id="{{data.gender}}" required > Female
+                    <input type="radio" name="gender" value="Female" {% if data.gender == "Female" %}checked {% endif %} required > Female
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" name="gender" value="Male" id="{{data.gender}}"> Male
+                    <input type="radio" name="gender" value="Male" {% if data.gender == "Male" %}checked {% endif %}> Male
                 </label>
                 <label class="radio-inline mb-2">
-                    <input type="radio" name="gender"value="Others" id="{{data.gender}}"> Others
+                    <input type="radio" name="gender"value="Others" {% if data.gender == "Others" %}checked {% endif %}> Others
                 </label>
             </div>
             <div class="form-group">
                 <label class="checkbox-inline mb-2">
-                    <input type="checkbox"  name="lan" value="Telugu"> Telugu
+                    <input type="checkbox"  name="lan" value="Telugu" {% if data.lang == "Telugu" %} checked {% endif %}> Telugu
                 </label>
                 <label class="checkbox-inline">
-                    <input type="checkbox"  name="lan" value="Hindi"> Hindi
+                    <input type="checkbox"  name="lan" value="Hindi" {% if data.lang == "Hindi" %} checked {% endif %}> Hindi
                 </label>
                 <label class="checkbox-inline">
-                    <input type="checkbox"  name="lan" value="English"> English
+                    <input type="checkbox"  name="lan" value="English"{% if data.lang == "English" %} checked {% endif %}> English
                 </label>
             </div>
             <div class="form-group">
@@ -53,22 +53,22 @@
             </div>
             <div class="form-group">
                 <label for="sel1"><b>Select Branch: </b></label>
-                <select class="form-control mb-2" id="sel1" name="branch" value="{{data.branch}}">
-                    <option value="{{data.branch}}">NONE</option>
-                    <option value="{{data.branch}}">CSE</option>
-                    <option value="{{data.branch}}">ECE</option>
-                    <option value="{{data.branch}}">MEC</option>
-                    <option value="{{data.branch}}">EEE</option>
-                    <option value="{{data.branch}}">IT</option>
+                <select class="form-control mb-2"  name="branch" value="{{data.branch}}" >
+                    <option value="{% if data.branch == "NONE" %} checked {% endif %}>">NONE</option>
+                    <option value="{% if data.branch == "CSE" %} checked {% endif %}>">CSE</option>
+                    <option value="{% if data.branch == "ECE" %} checked {% endif %}>">ECE</option>
+                    <option value="{% if data.branch == "MEC" %} checked {% endif %}>">MEC</option>
+                    <option value="{% if data.branch == "EEE" %} checked {% endif %}>">EEE</option>
+                    <option value="{% if data.branch == "IT" %} checked {% endif %}>">IT</option>
                      
                 </select>
             </div>
-            <div class="form-group">
-                <input type="text" name="dob" class="form-control mb-3" value="{{data.DOB}}">
-            </div>
+            <!-- <div class="form-group">
+                <input type="date" name="dob" class="form-control mb-3" value="{{data.DOB}}">
+            </div> -->
             <div class="text-center">
                 <input type="submit" value="Update" class="btn btn-outline-warning btn-lg mt-3">
-                <a href="{% url 'read' %}" class="btn btn-outline-primary btn-lg mt-3">Cancel</a>
+                <a href="{% url 'readstu' %}" class="btn btn-outline-primary btn-lg mt-3">Cancel</a>
             </div>
 
     </body>

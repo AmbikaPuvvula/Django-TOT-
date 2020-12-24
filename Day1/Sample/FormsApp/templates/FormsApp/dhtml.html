@@ -1,0 +1,32 @@
+{% load static %}
+<!-- {% load crispy_forms_tags %} -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic HTML Form Creation</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    </head>
+    <body>
+
+        <div class="container col-md-4">
+            <form action="#" method="POST">
+                <div class="card ">
+                    <div class="card-header bg-info text-center">
+                        Register Form
+                    </div>
+                    <div class="card-body ">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                    </div>
+                    <div class="card-footer">
+                        <input type="submit" value="Submit" class=" form-control btn btn-outline-success btn-md">
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+    </body>
+</html>

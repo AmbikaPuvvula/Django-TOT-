@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     'SampleApp',
     'SampleApp_2',
     'CrudApp',
-    'crispy_forms',
     'multiselectfield',
+    'FormsApp',
+    'DtlApp',
 ]
 
 MIDDLEWARE = [
@@ -80,11 +81,17 @@ WSGI_APPLICATION = 'Sample.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dtlApp',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
+# DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3',
+#                          'NAME': os.path.join(BASE_DIR, 'db.sqlite3'), }}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -124,4 +131,17 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+# CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_URL = 'login',
+LOGIN_REDIRECT_URL = 'dashboard'
+# LOGOUT_REDIRECT_URL = 'login'
+
+MEDIA_URL = '/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'DtlApp/static/images/')
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "@gmail.com"
+EMAIL_HOST_PASSWORD = "*********"

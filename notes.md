@@ -286,7 +286,7 @@
     - using db sqlite
     - django administrator
 
-## Day 9
+## Day 10
 
 - Update some model fields and make migrations and migrate
 - Then open db file in dbsqlite and insert a record
@@ -349,7 +349,7 @@
 - Task
   - empid,name,salary,department
 
-## Day 10
+## Day 11
 
 - CRUD operations using HTML forms
 - Create
@@ -366,6 +366,176 @@
     - click on edit display the edit page with the current details
     - click on delete display the dialog box to delete and cancel buttons
 
-## Day 11
+## Day 12
 
 - edit and delete with gender,branch and languages
+
+## Day 13
+
+### Dynamic HTML form creation
+
+- Generating Dynamic html forms
+  - using forms.py
+    - create forms.py inside App
+    - In forms.py have to import forms.py in django
+      - `from django import forms`
+      - create class to generate html fields
+    - forms.py ==> views.py(import form fields from forms) ==> templates
+  - using models.py(based on tables field)
+- Task
+  - Apply bootstrap for that html form
+  - After submit you have to display entire information to another HTML file
+
+## Day 14
+
+- Create model fields from that you have to create forms for that models
+- ModelForm is used to create input fields for model fields
+
+## Day 15
+
+- Navigation from Templates to the controller file
+- Transferring data from html page to controller(urls.py i.e views.py) we have 2 different methods
+
+  - GET(by default it considers as GET)
+    - displays all values in the url
+  - POST
+    - provide better security
+  - Baisc Procudere
+    - to get data from html to controller
+      - mention method in html and views.py
+        - get all data in the form of dictionary
+          - first check the method in function and then store that variable
+            - `if request.method == "POST": varname = request.POST`
+    - Advance Procedure
+      - Passing data directly to the forms
+        - pass rquest.post inside the form class then it directly store data
+
+- CRUD
+  - two ways
+    - Basic procedure (nedd to write all html)
+    - CRUD with forms.py(dynamic forms creation)
+    - Generic way
+
+## Day 16
+
+- Task
+  - create home page with navbar in that create two options register and display
+  - If we click on register navigate to register page from home page similarly navigate to display page from home page
+- DTL
+  - include
+  - extends
+
+## Day 17
+
+- difference between forms.Form and forms.ModelForm
+- forms.Form --> forms --> Form --> Basic procedure(with out model)
+- forms.ModelForm --> existing or user defined Model --> ModelForm
+- DTL
+  - {% extends %}
+  - {% include %}
+  - {% block title %}{% endblock %}
+  - {% block content %}{% endblock %}
+
+## Day 18
+
+- Model ==> forms --> widget ==>
+- Xampp ==> Apache
+- MySql ==> Database,postgres,nosql,mongo db
+- navbar --> Register
+  - url --> views --> forms --> [import models] widget --> - views <-- .html <-- views <-- models
+- Messages:[Notifications]
+
+  - views.py
+
+    - from django.contrib import messages
+
+    - Success
+    - Info
+    - Warning
+    - Debug
+
+  - syntax
+    - message.success(request,"Message")
+  - redirect message to hmlpage
+    - html
+      - {% if message %}
+      - {% for k in messages %}
+      - {{k}}
+      - {% endfor %}
+      - {% endif %}
+
+- for multiple checkbox
+  - html
+    - {% for i in y.lang %}
+      {% if i =='Eng' %}
+      <input type='checkbox' class='form-control' checked value='Eng'>English>
+
+## Day 19
+
+- User --> Create[existing table]
+- login --> Genrics --> Class
+- Logout -->
+- class -> LoginView,LogoutView,ListView,DetailView,CreateView
+- Mail Sending
+- Authentication --> login ,logout
+- Signal for profile creation
+- user --> profile extra fields --> id()
+- urls.py
+  - `from django.contrib.auth import views as v`
+  - `path('login/', v.LoginView.as_view(template_name='DtlApp/login.html'), name='login'),`
+- settings.py
+  - LOGIN_URL =''
+  - LOGIN_REDIRECT = ''
+
+## Day 20
+
+- profile creation -- using existing model -- auth_user
+- url --> view --> profile
+- To add extra fields
+  - create own models
+  - age,image,gender
+    - by adding ImageField in own model have to install pillow
+      - `pip install pillow`
+  - null -- True
+  - Own --> Model
+  - User --> Own Model
+  - user.id = m.id
+- signals
+  - user
+    - User => minimum[data]
+    - Own => Relationship[link]
+  - subscribe => minimum[data]
+  - Own models => Table data update
+  - Models(creation)
+    - delete migrations folder and create
+    - migrate
+    - Xampp
+      - database_name => drop
+      - create database
+    - Registration ==> User ==> Own ==> id ==> ?
+  - settings.py
+    - `MEDIA_URL = '/images/'`
+    - `MEDIA_ROOT = os.path.join(BASE_DIR, 'DtlApp/static/images/')`
+  - Main urls.py
+    - `if settings.DEBUG:urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)`
+
+## Day 21
+
+- Mail Sending
+
+  - Sender
+  - Receiver
+  - Message
+  - Subject
+
+- Personal mail
+  - account - settings[2 step verification need to disable then only less secure is visible] - security - less secure app - Enable
+  - settings.py
+    - `EMAIL_USE_TLS = True`
+    - `EMAIL_HOST = "smtp.gmail.com"`
+    - `EMAIL_PORT = 587`
+    - `EMAIL_HOST_USER = "gmail"`
+    - `EMAIL_HOST_PASSWORD = "password"`
+  - views.py
+    - `from Sample import settings`
+    - `from django.core.mail import send_mail`

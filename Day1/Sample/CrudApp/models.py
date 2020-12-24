@@ -54,7 +54,7 @@ class StudentDetails(models.Model):
     gender = models.CharField(max_length=10, choices=genders, null=True)
     lang = MultiSelectField(max_choices=3, choices=languages, null=True)
     email = models.EmailField(max_length=30)
-    DOB = models.DateField(null=True)
+    # DOB = models.DateField(null=True)
 
     def __str__(self):
         return self.stuname+' '+self.email

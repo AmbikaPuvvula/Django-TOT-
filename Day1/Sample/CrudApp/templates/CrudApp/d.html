@@ -9,7 +9,7 @@
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
     </head>
     <body>
-        <form action="{% url 'delete' info.id %}" method="POST">
+        <form action="{% url 'deletestu' info.id %}" method="POST">
             {% csrf_token %}
             <div class="alert alert-info alert dismissable fade show">
                 <h2 class="alert text-center">Are you sure to delete {{info.stuname}} record</h2>
