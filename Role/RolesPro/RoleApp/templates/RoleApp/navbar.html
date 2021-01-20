@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">Roles Access</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        {% if not user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home'%}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about'%}">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contactus'%}">Contact Us</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'login'%}">Login</a>
+        </li>
+        {% elif user.is_superuser %}
+        <li class="nav-item">
+          <a class="nav-link" href="">Admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home'%}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'dashboard'%}">Dashboard</a>
+        </li>
+        {% elif user.update.is_tch %}
+        <li class="nav-item">
+          <a class="nav-link" href="">Teacher</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home'%}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'dashboard'%}">Dashboard</a>
+        </li>
+        {% elif not user.update.is_tch %}
+        <li class="nav-item">
+          <a class="nav-link" href="">Student</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home'%}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'dashboard'%}">Dashboard</a>
+        </li>
+      {% endif %} 
+      </ul>
+      <ul class="navbar-nav ml-auto" style="margin-right: 120px">
+        {% if user.is_authenticated %}
+        <li class="dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown"><img src="{{request.user.update.image.url}}" height="25px" width="25px" class="rounded-circle">{{request.user.username}}</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+            <a class="dropdown-item" href="#">Change Password</a>
+            <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+          </div>
+        </li>
+        {% endif %}
+      </ul>
+    </div>  
+</nav>

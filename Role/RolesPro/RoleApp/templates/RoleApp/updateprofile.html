@@ -1,0 +1,30 @@
+{% extends 'RoleApp/base.html' %}
+{% block title %} Update Profile {% endblock %}
+{% block content %}
+<div class="container">
+    <div class="card mt-3 mx-auto shadow-lg col-md-7">
+        <div class="card-body">
+            <h2 class="bg-primary text-white text-center p-2 border rounded my-2">Update Profile</h2>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table class="table table-bordered">
+                    {% for d in data %}
+                <tr>
+                    <td>{{d}}</td>
+                </tr>
+                {% endfor %}
+                {% for b in udata %}
+                <tr>
+                    <td>{{b}}</td>
+                </tr>
+                {% endfor %}
+                </table>
+                <input type="submit" value="Update" class=" btn btn-block btn-success">
+            </form>
+            
+        </div>
+        
+    </div>
+    
+</div>
+{% endblock %}

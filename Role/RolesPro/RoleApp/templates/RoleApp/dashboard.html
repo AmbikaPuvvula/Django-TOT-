@@ -1,0 +1,37 @@
+{% extends 'RoleApp/base.html' %}
+{% block title %} Dashbaord {% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row mt-2">
+        {% if user.is_superuser %}
+        <div class="card col-md mx-2">
+            <div class="card-body">
+                <h2>Users</h2>
+            </div>
+        </div>
+        <div class="card col-md mx-2">
+            <div class="card-body">
+                <h2>Actions</h2>
+            </div>
+        </div>
+        {% elif user.update.is_tch %}
+        <div class="card col-md mx-2">
+            <div class="card-body">
+                <h2>Student</h2>
+            </div>
+        </div>
+        <div class="card col-md mx-2">
+            <div class="card-body">
+                <h2>Actions</h2>
+            </div>
+        </div>
+        {% else %}
+        <div class="card col-md mx-2">
+            <div class="card-body">
+                <h2>Actions</h2>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

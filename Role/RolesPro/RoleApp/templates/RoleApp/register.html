@@ -1,0 +1,25 @@
+{% extends 'RoleApp/base.html' %}
+{% block title %} Register {% endblock %}
+{% block content %}
+<div class="container">
+    <div class="card col-md-6 mx-auto mt-3 shadow-lg border-success ">
+        <div class="card-body">
+            <h3>Register Form</h3>
+            <form method="POST">
+                {% csrf_token %}
+                <table class="table table-bordered">
+                    {% for i in formfields %}
+                    <tr>
+                        <td>{{i}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <input type="submit" value="Subscribe" class="form-control btn btn-success btn-block mb-2">
+            </form>
+        </div> 
+    </div>
+    
+</div>
+{% endblock %}
+
+
